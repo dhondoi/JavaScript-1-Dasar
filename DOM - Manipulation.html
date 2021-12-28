@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+    <style>
+      * {
+        border: 2px solid #dedede;
+        padding: 15px;
+        margin: 15px;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        max-width: 600px;
+        margin: 30px auto;
+        font-family: sans-serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+      <section id="a">
+        <p class="p1">paragraf 1</p>
+        <a href="http://instagram.com/sandhikagalih"
+          >Instagram Sandhika Galih</a
+        >
+        <p class="p2">paragraf 2</p>
+        <p class="p3">paragraf 3</p>
+      </section>
+      <section id="b">
+        <p>paragraf 4</p>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </section>
+    </div>
+
+    <script>
+      /*Manipulasi Element*/
+      const h1 = document.getElementById("judul");
+      h1.innerHTML = "<em>DHONDOI</em>";
+      const sectionA = document.querySelector("section#a");
+      sectionA.innerHTML = "<h2>3 paragraf dan 1 link hilang. tambah style backgroundColor = biru</h2>";
+      sectionA.style.backgroundColor = "blue";
+      const h2 = sectionA.querySelector("h2");
+      h2.setAttribute("class","judulH2");
+      //atribut class
+      h2.classList.add("label");
+      h2.classList.remove("label");
+      h2.classList.toggle("label");
+      //h2.classList.item(1) -> label
+      h2.classList.replace("judulH2","hehe");
+      /*Manipulasi Node*/
+      //document.createElement()
+      const pBaru = document.createElement("p");
+      //document.createTextNode()
+      const textPBaru = document.createTextNode("Paragraf Baru");
+      //node.appendChild()
+      pBaru.appendChild(textPBaru);
+      const sectionB = document.getElementById("b");
+      sectionB.appendChild(pBaru);
+      //node.insertBefore()
+      const liBaru = document.createElement("li");
+      const textLiBaru = document.createTextNode("List Baru");
+      liBaru.appendChild(textLiBaru);
+      const ul = document.querySelector("section#b ul");
+      //const li2 = ul.querySelector("li:nth-child(2)");
+      const li2 = ul.getElementsByTagName("li")[2];
+      ul.insertBefore(liBaru,li2);
+      //parentNode.removeChild()
+      const li3 = ul.getElementsByTagName("li")[3];
+      ul.removeChild(li3);
+      //parentNode.replaceChild()
+      const h2Baru = document.createElement("h2");
+      const textH2Baru = document.createTextNode("JUDUL BARU");
+      h2Baru.appendChild(textH2Baru);
+      const p = document.getElementsByTagName("p")[0];
+      sectionB.replaceChild(h2Baru,p);
+    </script>
+  </body>
+</html>

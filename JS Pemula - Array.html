@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array JS</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 4, 5, 7, 10];
+      //menggunakan for(int;cond;incre/decre)
+      for (var index = 0; index < arr.length; index++) {
+        console.log("for ke - " + index + " = " + arr[index]);
+      }
+      //menggunakan method array join() / join(String)
+      console.log(arr.join());
+      console.log("arr.join() = " + arr.join("-"));
+      //menggunakan method array push(nilaibaru)
+      arr.push(11);
+      console.log("arr.push(11) = " + arr.join());
+      //menggunakan method array pop()
+      arr.pop();
+      console.log("arr.pop() = " + arr.join());
+      //menggunakan method array unshift(nilaibaru);
+      arr.unshift(0);
+      console.log("arr.unshift(0) = " + arr.join());
+      //menggunakan method array shift()
+      arr.shift();
+      console.log("arr.shift() = " + arr.join());
+      //menggunakan method array splice(indexawal,hapusberapa,nilai1,...,nilain)
+      arr.splice(1, 0, 2, 3);
+      console.log("arr.splice(1,0,2,3) = " + arr.join());
+      //menggunakan method array slice(indexawal,indexakhir)
+      console.log("arr.slice(1,3) = " + arr.slice(1, 3));
+      //menggunakan method array forEach(function(e){})
+      arr.forEach((e) => {
+        console.log("arr.forEach(function(e){}) = " + e);
+      });
+      //menggunakan method array map()
+      var arr2 = arr.map((e) => {
+        return e;
+      });
+      console.log("arr.map(function(e){return e;}) = " + arr2.join());
+      //menggunakan method array sort() / sort((a, b) => { return a - b; })
+      arr = [5, 4, 3, 2, 1];
+      arr.sort((a, b) => {
+        return a - b;
+      });
+      console.log("arr.sort() = " + arr.join());
+      //menggunakan method array find((e)=>{return e == 5;})
+      arr2 = arr.find((e) => {
+        return e == 5;
+      });
+      console.log("arr.find((e)=>{return e == 5;}) = " + arr2);
+      //menggunakan method array filter((e)=>{return e == 5;})
+      arr2 = arr.filter((e) => {
+        return e < 5;
+      });
+      console.log("arr.filter((e)=>{return e < 5;}) = " + arr2.join());
+    </script>
+  </body>
+</html>

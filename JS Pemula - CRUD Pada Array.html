@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Input Form</legend>
+      <input type="text" placeholder="Input Nama Barang..." />
+      <button>Tambah</button>
+    </fieldset>
+    <div><ul></ul></div>
+
+    <script>
+      //data barang
+      const dataBarang = ["Buku Tulis", "Pensil", "Spidol"];
+      //tampil barang
+      function showBarang() {
+        const listBarang = document.getElementsByTagName("ul")[0];
+        //clear list barang
+        listBarang.innerHTML = "";
+        //cetak semua barang
+        for (let index = 0; index < dataBarang.length; index++) {
+          let btnEdit =
+            "<a href='#' onclick='editBarang(" + index + ")'>Edit</a>";
+          let btnHapus =
+            "<a href='#' onclick='deleteBarang(" + index + ")'>Hapus</a>";
+          listBarang.innerHTML +=
+            "<li>" + dataBarang[index] + " [" + btnEdit + " | " + btnHapus + "]</li>";
+        }
+      }
+      document
+        .getElementsByTagName("button")[0]
+        .addEventListener("click", () => {
+          const inputBarang = document.getElementsByTagName("input")[0];
+          dataBarang.push(inputBarang.value);
+          showBarang();
+        });
+
+      function editBarang(id) {
+        let newName = prompt("Nama Baru ", dataBarang[id]);
+        dataBarang[id] = newName;
+        showBarang();
+      }
+      function deleteBarang(id) {
+        dataBarang.splice(id,1);
+        showBarang();
+      }
+      showBarang();
+    </script>
+  </body>
+</html>

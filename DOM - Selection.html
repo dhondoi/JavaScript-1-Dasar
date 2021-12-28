@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM Selection</title>
+    <style>
+      * {
+        border: 2px solid #dedede;
+        padding: 15px;
+        margin: 15px;
+      }
+      html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        max-width: 600px;
+        margin: 30px auto;
+        font-family: sans-serif;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+      <section id="a">
+        <p class="p1">paragraf 1</p>
+        <a href="http://instagram.com/sandhikagalih"
+          >Instagram Sandhika Galih</a
+        >
+        <p class="p2">paragraf 2</p>
+        <p class="p3">paragraf 3</p>
+      </section>
+      <section id="b">
+        <p>paragraf 4</p>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </section>
+    </div>
+
+    <script>
+      /*
+        document.getElementById() -> element
+        */
+      const judul = document.getElementById("judul");
+      judul.style.color = "red";
+      judul.style.backgroundColor = "lightblue";
+      judul.innerHTML = "Ini dari script";
+      /*
+        document.getElementsByTagName() -> HTMLCollection
+        */
+      const p = document.getElementsByTagName("p");
+      p[1].style.backgroundColor = "grey";
+      const h1 = document.getElementsByTagName("h1")[0];
+      h1.style.fontSize = "58px";
+      /*
+        document.getElementsByClassName() -> HTMLCollection
+        */
+      const p1 = document.getElementsByClassName("p1");
+      p1[0].style.backgroundColor = "green";
+      /*
+        document.querySelector() -> element
+        */
+      const p4 = document.querySelector("section#b p");
+      p4.style.backgroundColor = "lightgreen";
+      const li2 = document.querySelector("section#b ul li:nth-child(2)");
+      li2.style.backgroundColor = "orange";
+      const p1Baru = document.querySelector("p");
+      p1Baru.style.backgroundColor = "blue";
+      /*
+        document.querySelectorAll() -> nodeList
+        */
+      const pBaru = document.querySelectorAll("p");
+      pBaru[2].style.backgroundColor = "grey";
+      /*
+        nodeRoot
+        */
+      const sectionB = document.getElementById("b");
+      const p4Baru = sectionB.querySelector("p");
+      p4Baru.style.fontWeight = "bold";
+    </script>
+  </body>
+</html>

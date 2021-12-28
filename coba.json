@@ -1,0 +1,30 @@
+[
+    {
+        "nama": "Doni",
+        "umur": 18,
+        "npm": "201643500883",
+        "lulus": true,
+        "hobby": [
+            "coding",
+            "gaming"
+        ],
+        "pembimbing": {
+            "pembimbing1": "Nur Alam",
+            "pembimbing2": "Siti Marti'ah"
+        }
+    },
+    {
+        "nama": "Doni",
+        "umur": 18,
+        "npm": "201643500883",
+        "lulus": true,
+        "hobby": [
+            "coding",
+            "gaming"
+        ],
+        "pembimbing": {
+            "pembimbing1": "Nur Alam",
+            "pembimbing2": "Siti Marti'ah"
+        }
+    }
+]
