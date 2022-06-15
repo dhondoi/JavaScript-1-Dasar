@@ -56,17 +56,28 @@
       //   getData("./coba.json", dataSuccess, dataError);
 
       // asyncronous callback menggunakan jquery
-      console.log("mulai");
-      $.ajax({
-        url: "./coba.json",
-        success: (data) => {
-          data.forEach((e) => {
-            console.log(e.nama);
-          });
-        },
-        error: () => {},
-      });
-      console.log("selesai");
+      // console.log("mulai");
+      // $.ajax({
+      //   url: "./coba.json",
+      //   success: (data) => {
+      //     data.forEach((e) => {
+      //       console.log(e.nama);
+      //     });
+      //   },
+      //   error: () => {},
+      // });
+      // console.log("selesai");
+
+      // callback ver. dicoding
+      const orderCoffee = (callback) => {
+        let coffee = null;
+        console.log("Sedang membuat kopi, silakan tunggu...");
+        setTimeout(() => {
+          coffee = "Kopi sudah jadi!";
+          callback(coffee);
+        }, 3000);
+      };
+      orderCoffee((coffee) => console.log(coffee));
     </script>
   </body>
 </html>

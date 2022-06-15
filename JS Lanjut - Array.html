@@ -8,29 +8,29 @@
   </head>
   <body>
     <script>
-      var arr = [1, 4, 5, 7, 10];
+      let arr = ["Cokelat", 42.5, 22, true, "Programming"];
       //menggunakan for(int;cond;incre/decre)
-      for (var index = 0; index < arr.length; index++) {
+      for (let index = 0; index < arr.length; index++) {
         console.log("for ke - " + index + " = " + arr[index]);
       }
       //menggunakan method array join() / join(String)
       console.log(arr.join());
-      console.log("arr.join() = " + arr.join("-"));
+      console.log("arr.join('-') = " + arr.join("-"));
       //menggunakan method array push(nilaibaru)
       arr.push(11);
-      console.log("arr.push(11) = " + arr.join());
+      console.log("arr.push(11) = " + arr);
       //menggunakan method array pop()
       arr.pop();
-      console.log("arr.pop() = " + arr.join());
+      console.log("arr.pop() = " + arr);
       //menggunakan method array unshift(nilaibaru);
       arr.unshift(0);
-      console.log("arr.unshift(0) = " + arr.join());
+      console.log("arr.unshift(0) = " + arr);
       //menggunakan method array shift()
       arr.shift();
-      console.log("arr.shift() = " + arr.join());
-      //menggunakan method array splice(indexawal,hapusberapa,nilai1,...,nilain)
-      arr.splice(1, 0, 2, 3);
-      console.log("arr.splice(1,0,2,3) = " + arr.join());
+      console.log("arr.shift() = " + arr);
+      //menggunakan method array splice(indexawal,hapusberapa)
+      arr.splice(1,2);
+      console.log("arr.splice(1,2) = " + arr);
       //menggunakan method array slice(indexawal,indexakhir)
       console.log("arr.slice(1,3) = " + arr.slice(1, 3));
       //menggunakan method array forEach(function(e){})

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Promise</title>
+    <title>Promise Then</title>
   </head>
   <body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -52,24 +52,34 @@
       // console.log("selesai");
 
       /*
-      PROMISE
+      PROMISE THEN
       */
-      // instasiasi
-      // const coffee = new Promise(); // error tanpa executor function
-      // buat executor function
-      const executorFunction = (resolve, reject) => {
-        const isCoffeeMakerReady = true;
-        if (isCoffeeMakerReady) {
-          resolve("Kopi berhasil dibuat");
-        } else {
-          reject("Mesin kopi tidak bisa digunakan");
-        }
+      const stock = {
+        coffeeBeans: 15,
+        water: 1000,
       };
-      const makeCoffee = () => {
-        return new Promise(executorFunction);
+
+      const checkStock = () => {
+        return new Promise((resolve, reject) => {
+          if (stock.coffeeBeans >= 16 && stock.water >= 250) {
+            resolve("Stok cukup. Bisa membuat kopi");
+          } else {
+            reject("Stok tidak cukup");
+          }
+        });
       };
-      const coffeePromise = makeCoffee();
-      console.log(coffeePromise);
+
+      const handleSuccess = (resolvedValue) => {
+        console.log(resolvedValue);
+      };
+
+      const handleFailure = (rejectionReason) => {
+        console.log(rejectionReason);
+      };
+
+      // checkStock().then(handleSuccess, handleFailure);
+      // on reject catch method
+      checkStock().then(handleSuccess).catch(handleFailure);
     </script>
   </body>
 </html>
