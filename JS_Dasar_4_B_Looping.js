@@ -44,3 +44,11 @@ for (let i = 0; i < 10; i++) {
   }
   console.log(i);
 }
+
+// with statement
+console.log(person);
+with (person) {
+  console.log(name);
+  console.log(origin);
+  console.log(birthYear);
+}
