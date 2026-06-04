@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Error Handling</title>
+  </head>
+
+  <body>
+    <script>
+      async function getData() {
+        const a = await fetch("http://www.omdbapi.com/?apikey=9a3f3566&s=avengers")
+          .then((a) => {
+            if (a.ok === false) {
+              // throw new Error(a.statusText);
+              console.log(a.statusText);
+            } else {
+              return a.json();
+            }
+          })
+          .then((response) => response.Search);
+        a.forEach(element => {
+         console.log(element.Title); 
+        });
+      }
+      getData();
+    </script>
+  </body>
+</html>
