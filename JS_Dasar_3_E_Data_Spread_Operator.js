@@ -17,9 +17,11 @@ console.log(newArray); // Output: ['Dicoding', 'Indonesia', 'Jl. Batik Kumeli No
 const original = ['apple', 'banana', 'cherry'];
 const copy = [...original];
 const [...copy2] = copy
-console.log(copy); // Output: ['apple', 'banana', 'cherry']
+console.log("Copy",copy); // Output: ['apple', 'banana', 'cherry']
 copy[0] = "hack";
-console.log(copy); // Output: ['hack', 'banana', 'cherry']
-console.log(copy2); // Output: ['apple', 'banana', 'cherry']
+console.log("Copy",copy); // Output: ['hack', 'banana', 'cherry']
+console.log("Original",original); // Output: ['apple', 'banana', 'cherry']
+console.log("Copy2",copy2); // Output: ['apple', 'banana', 'cherry']
 copy2[1] = "hack";
-console.log(copy2); // Output: ['apple', 'hack', 'cherry']
+console.log("Copy2",copy2); // Output: ['apple', 'hack', 'cherry']
+console.log("Original",original); // Output: ['apple', 'banana', 'cherry']
