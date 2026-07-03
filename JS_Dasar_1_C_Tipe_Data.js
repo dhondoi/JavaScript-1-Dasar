@@ -1,7 +1,7 @@
 // String
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear(); // mengambil tahun saat ini
 const text = `Sekarang adalah tahun ${currentYear}.`;
-console.log(text);
+console.log(text); // // output: Sekarang adalah tahun <tahun_saat_ini>
 
 // Number
 const result = 50 / 0;
@@ -18,9 +18,9 @@ console.log(isGreater); // output: true (5 lebih besar dari 2)
 
 // Nilai Kosong
 let message;
-console.log(message); // unefined
+console.log(message); // output: undefined
 message = null;
-console.log(message); // null
+console.log(message); // output: null
 const name1 = { first: 'Dicoding', last: null };
 const name2 = { first: 'Dicoding', last: undefined };
 console.log(JSON.stringify(name1)); // output: {"first":"Dicoding","last":null}

@@ -51,7 +51,7 @@ const person = {
 console.log(person);
 person.sayHello("Joko");
 console.log(person.fullName);
-person.fullName = "Joko Widodo"
+person.fullName = "Joko Widodo";
 console.log(person.fullName);
 // tambah method
 console.log("-----Menambah Method ke Object-----");
@@ -59,3 +59,48 @@ person.greeting = () => {
   console.log(`Hello My Name is ${person.firstName}`);
 };
 person.greeting();
+
+// destructuring object
+const profile = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 18,
+};
+const { firstName, lastName } = profile;
+console.log(firstName, lastName);
+const { age } = profile;
+console.log(age);
+
+/*
+ *   destructuring assigntment
+ */
+const profile1 = {
+  firstName1: "Dhon",
+  lastName: "Doi",
+  age1: 29,
+};
+let firstName1 = "Dimas";
+let age1 = 20;
+// menginisialisasi nilai baru melalui destructuring object
+({ firstName1, age1 } = profile1);
+console.log(firstName1);
+console.log(age1);
+
+const user = {
+  firstName: "Luke",
+  lastName: "Skywalker",
+  age: 19,
+  isJedi: true,
+  "home world": "Tattooine",
+};
+// pemanggilan nama object
+console.log(`Halo, nama saya ${user.firstName} ${user.lastName}`);
+console.log(`Umur saya ${user.age} tahun`);
+console.log(`Saya berasal dari ${user["home world"]}`);
+//  assignment value
+user.firstName = "Glossy red";
+user["home world"] = "GBJ";
+console.log(user);
+// menghapus property
+delete user["home world"];
+console.log(user);

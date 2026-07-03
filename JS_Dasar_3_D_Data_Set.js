@@ -24,3 +24,12 @@ delSet.add(1);
 delSet.add(2);
 delSet.delete(1);
 console.log(delSet); // Set(1) { 2 }
+
+// instasiasi Set
+const numberSet = new Set([1, 4, 6, 4, 1]);
+console.log(numberSet);
+// menambah data
+numberSet.add(5);
+numberSet.add(10);
+numberSet.add(6);
+console.log(numberSet);

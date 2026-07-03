@@ -5,13 +5,11 @@ function convertCelsiusToFahrenheit(temperature = 50) {
     console.log('Hasil konversi:', temperatureInFahrenheit);
 }
 // Hanya menampilkan nilai function
-console.log(convertCelsiusToFahrenheit);
-// Output => [Function: convertCelciusToFahrenheit]
+console.log(convertCelsiusToFahrenheit); // Output => [Function: convertCelciusToFahrenheit]
 const temperatureInCelsius = 90;
 // Akan menjalankan isi function
 // Nilai yang diberikan dalam parentheses saat pemanggilan function, ia disebut sebagai argument.
-convertCelsiusToFahrenheit(temperatureInCelsius);
-// Output => Hasil konversi: 194
+convertCelsiusToFahrenheit(temperatureInCelsius); // Output => Hasil konversi: 194
 
 // Hoisting
 greetWorld();

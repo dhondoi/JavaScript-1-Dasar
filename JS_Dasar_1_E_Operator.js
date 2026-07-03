@@ -1,14 +1,15 @@
 let age = 25;
 // Unary operator
-typeof age;
+console.log(typeof age); // output: number
 
 // Binary operator
-5 + 4;
-10 / 2;
-age = 30;
+console.log(5 + 4);
+console.log(10 / 2);
+console.log((age = 30));
 
 // Ternary operator (conditional operator)
-age < 18 ? "You are too young!" : "Welcome onboard!"; // 30 < 18 ? true : false;
+const message = age < 18 ? "You are too young!" : "Welcome onboard!";
+console.log(message);
 
 // Digunakan untuk menginisiasi nilai
 const name = "Dicoding";

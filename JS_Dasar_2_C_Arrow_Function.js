@@ -13,3 +13,35 @@ const convertCelsiusToFahrenheitInConciseSyntax =
 
 temperatureInFahrenheit = convertCelsiusToFahrenheitInConciseSyntax(90);
 console.log('Hasil konversi:', temperatureInFahrenheit);
+
+//Arrow Function
+      // notasi arrow function
+      // const/let namaVariabel = (parameterJikaAda) => {};
+
+      // konsep this pada arrow function
+
+      // constructor function standar
+      // const Mahasiswa = function () {
+      //     this.nama = "Doni"
+      //     this.sayHello = function () {
+      //         console.log(`Halo ${this.nama}`);
+      //     }
+      // }
+      // const doni = new Mahasiswa();
+
+      // arrow function : objek tidak bisa menggunakan arrow function
+      //   const Mahasiswa = function () {
+      //     this.nama = "Doni";
+      //     this.sayHello = () => {
+      //       console.log(`Halo ${this.nama}`);
+      //     };
+      //   };
+      //   const doni = new Mahasiswa();
+
+      // object literal : error
+      //   const mahasiswa = {
+      //     nama: "Doni",
+      //     sayHello: function()  {
+      //       console.log(`Halo ${nama}`);
+      //     },
+      //   };
